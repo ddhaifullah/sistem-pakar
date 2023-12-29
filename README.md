@@ -92,7 +92,7 @@ Aplikasi ini dibuat menggunakan [TypeScript], untuk membuat aplikasi web dan bac
 16. [Brain.js](https://brain.js.org/)
 
 
-<!-- ![Dhia Dhaifullah](.images/dhia_profile.jpg) -->
+<!-- ![Dhia Dhaifullah](.images/dhia_profile.jpg)
 <div style="display: flex; justify-content: center; gap: 15px;">
 
   <a href="https://github.com/Syamsalam" target="blank">
@@ -115,4 +115,4 @@ Aplikasi ini dibuat menggunakan [TypeScript], untuk membuat aplikasi web dan bac
     <img src="https://placehold.co/400" width="100" alt="Profile" style="border-radius: 50%;" />
   </a>
 
-</div>
+</div> -->
