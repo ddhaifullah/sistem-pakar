@@ -1,98 +1,24 @@
-# TUGAS AKHIR - SISTEM PAKAR DIAGNOSA PENYAKIT NEUROLOGI
+# SISTEM PAKAR
 
-### Dosen
-    ```
-        - Dosen Pertama:
-            1. DESI ANGGREANI, S.kom.,MT
-        - Dosen Kedua:
-            2. CHYQUITHA DANUPUTRI, S.Kom, M.Kom
-    ```
+## Anggota Kelompok 4
+1. 105841108621 - Dhia Dhaifullah
+2. 105841108720 - Syamsul alam
+3. 105841108721 - Nurul Hikmah Sam
+4. 105841108821 - Ratna	
+5. 105841108921 - Aulya Agustin
 
-### Anggota Kelompok IV
-    ```
-        1. 105841108621 - Dhia Dhaifullah
-        2. 105841108720 - Syamsul alam
-        3. 105841108721 - Nurul Hikmah Sam
-        4. 105841108821 - Ratna	
-        5. 105841108921 - Aulya Agustin
-    ```
+## Deskripsi Singkat
+Sistem Pakar ini dibuat untuk membantu mendiagnosa kanken payudara. Sistem ini menggunakan metode SVM (Support Vector Machine) untuk mengklasifikasikan data. Data yang digunakan adalah data dari Kaggle yang berisi 569 data. Kemudia dari 569 data tersebut dibagi menjadi 2 bagian yaitu data training dan data testing. Data training berisi 80% dari data awal dan data testing berisi 20% dari data awal. Data training dan data testing tersebut kemudian diolah menggunakan metode SVM untuk mengklasifikasikan data. Data yang sudah diklasifikasikan kemudian diuji menggunakan data testing. Hasil dari pengujian tersebut kemudian dihitung akurasinya. Akurasi yang didapatkan adalah 98.25%.
 
-## Pengertian Sistem Pakar
-Sistem pakar adalah sistem yang dapat menyelesaikan masalah-masalah yang biasanya hanya dapat diselesaikan oleh seorang pakar. Sistem pakar dapat menyelesaikan masalah-masalah tersebut dengan cara meniru cara berpikir seorang pakar. Sistem pakar dapat digunakan untuk mendiagnosa penyakit, menentukan penyebab kerusakan, menentukan keputusan-keputusan yang harus diambil, dan lain-lain.
 
-## Metode
-1. Jaringan Syaraf Tiruan (Artificial Neural Network)
-    - Backpropagation
-    - Perceptron
-    - Hopfield
-    - Kohonen
-    - LVQ
-    - RBF
-2. Logika Fuzzy
-    - Fuzzy Mamdani
-    - Fuzzy Sugeno
+## Requirement
+1. Python 3.7.3
+2. Flask 1.1.1
+3. Flask-WTF 0.14.2
+4. Jinja2 2.10.1
+5. MarkupSafe 1.1.1
+6. Werkzeug 0.15.4
+7. numpy 1.16.4
+8. pandas 0.24.2
+9. scikit-learn 0.21.2
 
-### Deskripsi Singkat
-Sistem pakar diagnosa penyakit neurologi adalah sistem pakar yang dapat mendiagnosa penyakit neurologi berdasarkan gejala-gejala yang dialami oleh pasien. Sistem pakar ini menggunakan metode jaringan syaraf tiruan (Artificial Neural Network) dengan algoritma backpropagation. Sistem pakar ini dapat mendiagnosa 10 penyakit neurologi, yaitu:
-1. Epilepsy
-2. Migraine
-3. Headache
-4. Stroke
-5. Tension-Type Headache
-6. Parkinson
-7. Alzheimer
-8. Multiple Sclerosis
-9. Amyotrophic Lateral Sclerosis
-10. Huntington
-
-### Tentang Aplikasi
-Aplikasi ini dibuat menggunakan [TypeScript], untuk membuat aplikasi web dan backend API dan juga untuk membuat model Jaringan Syaraf Tiruan.
-
-    - Frontend: React-TS / Next.js
-        ```Fitur:
-        - Login
-        - Register
-        - Dashboard
-        - Diagnosa
-        - Riwayat Diagnosa
-        - Riwayat Pengguna
-        - Logout
-        ```
-       
-    - Backend: Nest.js
-        ```Utilities:
-        - Prisma
-        - PostgreSQL
-        - Bcrypt
-        - JWT
-        - Class Validator
-        - Class Transformer
-        - @nestjs/config
-        ```
-    - Jaringan Syaraf Tiruan:
-        ```Utilities:
-        - Brain.js
-        - @types/brain.js
-        - TensorFlow.js
-        - @tensorflow/tfjs-node
-        - @tensorflow/tfjs-node-gpu
-        ```
-
-### Referensi
-
-1. [Sistem Pakar Diagnosa Penyakit Neurologi](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-2. [Sistem Pakar Diagnosa Penyakit Neurologi Berbasis Web](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-3. [Jaringan Syaraf Tiruan](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-4. [Backpropagation](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-5. [Perceptron](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-6. [Hopfield](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-7. [Kohonen](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-8. [LVQ](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-9. [RBF](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-10. [Fuzzy Mamdani](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-11. [Fuzzy Sugeno](https://www.researchgate.net/publication/338672784_Sistem_Pakar_Diagnosa_Penyakit_Neurologi)
-12. [TypeScript](https://www.typescriptlang.org/)
-13. [React-TS](https://reactjs.org/)
-14. [Next.js](https://nextjs.org/)
-15. [TensorFlow.js](https://www.tensorflow.org/js)
-16. [Brain.js](https://brain.js.org/)

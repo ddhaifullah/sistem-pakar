@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis - Upload File</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="min-h-screen">
+        <nav class="bg-gray-800 p-4">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                    <div class="flex flex-shrink-0 items-center">
+                        <p class="font-bold text-white uppercase">Kelompok 4</p>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Semester-5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="min-w-0 flex-1">
+                    <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Tambah Data</h2>
+                    </div>
+                    <div class="mt-5 flex lg:ml-4 lg:mt-0">
+                    <span class="hidden sm:block">
+                        <a href="/" type="button" class="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                            <svg class="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                            </svg>
+                            Kembali Home
+                        </a>
+                    </span>
+                
+                    <span class="ml-3 hidden sm:block">
+                        <a href="/history" type="button" class="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                            <svg class="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z" />
+                                <path d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z" />
+                            </svg>
+                            History
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    <form id="fileUploadForm" class="p-4 m-4">
+        <div class="flex items-center justify-center w-full p-8">
+            <label for="file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer">
+                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">FILE CSV</p>
+                </div>
+                <input id="file" type="file" class="hidden" name="file" accept=".csv" required />
+            </label>
+        </div> 
+        
+        <button type="button" class="w-full p-4 bg-gray-800 rounded-md text-white uppercase font-bold hover:bg-gray-700" onclick="submitFile()">Submit File</button>
+    </form>
+
+    <script>
+        function submitFile() {
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+    
+            if (file) {
+                const formData = new FormData();
+                formData.append('file', file);
+    
+                fetch('/submit_file', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(updatedPredictions => {
+                    console.log(updatedPredictions);
+                    window.location.href = '/history';
+                })
+                .catch(error => console.error('Error submitting file:', error));
+            } else {
+                alert('Pilih file CSV terlebih dahulu.');
+            }
+        }
+    </script>
+</body>
+</html>
