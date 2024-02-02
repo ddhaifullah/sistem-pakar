@@ -14,11 +14,3 @@ Sistem Pakar ini dibuat untuk membantu mendiagnosa kanken payudara. Sistem ini m
 ## Requirement
 1. Python 3.7.3
 2. Flask 1.1.1
-3. Flask-WTF 0.14.2
-4. Jinja2 2.10.1
-5. MarkupSafe 1.1.1
-6. Werkzeug 0.15.4
-7. numpy 1.16.4
-8. pandas 0.24.2
-9. scikit-learn 0.21.2
-
